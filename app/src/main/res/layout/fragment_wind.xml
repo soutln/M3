@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="300dp"
+    android:layout_width="match_parent"
+    android:background="@color/background_wind"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/page_info"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/page_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/WindView"
+            android:textColor="@color/text_main"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/setting_wind"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/update_wind"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_autorenew"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/setting_wind"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/page_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/wind_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="-"
+            android:textColor="@color/text_main"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/wind_direction"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_navigation" />
+
+        <TextView
+            android:id="@+id/north"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="С"
+            android:textColor="@color/text_main"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/wind_direction"
+            app:layout_constraintEnd_toEndOf="@+id/wind_direction"
+            app:layout_constraintStart_toStartOf="@+id/wind_direction" />
+
+        <TextView
+            android:id="@+id/south"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ю"
+            android:textColor="@color/text_main"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/wind_direction"
+            app:layout_constraintStart_toStartOf="@+id/wind_direction"
+            app:layout_constraintTop_toBottomOf="@+id/wind_direction" />
+
+        <TextView
+            android:id="@+id/west"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="З"
+            android:textColor="@color/text_main"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/wind_direction"
+            app:layout_constraintEnd_toStartOf="@+id/wind_direction"
+            app:layout_constraintTop_toTopOf="@+id/wind_direction" />
+
+        <TextView
+            android:id="@+id/east"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="В"
+            android:textColor="@color/text_main"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/wind_direction"
+            app:layout_constraintStart_toEndOf="@+id/wind_direction"
+            app:layout_constraintTop_toTopOf="@+id/wind_direction" />
+
+        <TextView
+            android:id="@+id/wind_speed_div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="@color/text_main"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="@+id/wind_speed_text"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="@+id/wind_speed_text"
+            app:layout_constraintTop_toBottomOf="@+id/wind_speed_text" />
+
+        <TextView
+            android:id="@+id/wind_speed_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="СКОРОСТЬ"
+            android:textColor="@color/text_main"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/wind_direction_text"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="@+id/wind_direction_text"
+            app:layout_constraintTop_toBottomOf="@+id/wind_direction_text" />
+
+        <TextView
+            android:id="@+id/wind_speed_text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="м/с²"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/wind_speed_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/wind_speed_div"
+            app:layout_constraintTop_toBottomOf="@+id/wind_speed_text" />
+
+        <TextView
+            android:id="@+id/wind_direction_text"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/text_main"
+            android:textSize="27sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/wind_direction"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

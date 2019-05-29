@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/homeView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="300dp"
+    android:layout_width="match_parent"
+    android:background="@color/background_home"
+    xmlns:Skeleton="http://schemas.android.com/apk/res-auto"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/page_info"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        tools:ignore="MissingConstraints"
+        >
+
+        <TextView
+            android:id="@+id/page_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/HomeView"
+            android:textColor="@color/text_main"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/setting_home"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:id="@+id/update_home"
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_autorenew"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/setting_home"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/page_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <io.rmiri.skeleton.SkeletonView
+            android:id="@+id/home_date_skeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            Skeleton:SK_textLineNumber="1"
+            Skeleton:SK_shapeType="rect"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/home_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="----------------------------"
+                android:textColor="@color/text_main"
+                android:textSize="10dp"
+                />
+        </io.rmiri.skeleton.SkeletonView>
+
+
+        <io.rmiri.skeleton.SkeletonView
+            android:id="@+id/smile_skeleton"
+            Skeleton:SK_cornerRadius="0dp"
+            Skeleton:SK_padding="0dp"
+            Skeleton:SK_shapeType="oval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/smile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@android:color/transparent" />
+        </io.rmiri.skeleton.SkeletonView>
+
+
+        <io.rmiri.skeleton.SkeletonView
+            android:id="@+id/home_temp_div_skeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            Skeleton:SK_textLineNumber="1"
+            Skeleton:SK_shapeType="rect"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/smile_skeleton"
+            app:layout_constraintEnd_toStartOf="@+id/text_percent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toEndOf="@+id/smile_skeleton"
+            app:layout_constraintTop_toTopOf="@+id/smile_skeleton"
+            app:layout_constraintVertical_bias="0.0" >
+
+            <TextView
+                android:id="@+id/home_temp_div"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="---"
+                android:textColor="@color/text_main"
+                android:textSize="75sp"
+                />
+
+        </io.rmiri.skeleton.SkeletonView>
+
+
+        <TextView
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="."
+            android:textColor="@color/text_main"
+            android:textSize="55sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_temp_div_skeleton"
+            app:layout_constraintStart_toEndOf="@+id/home_temp_div_skeleton"
+            app:layout_constraintTop_toTopOf="@+id/home_temp_div_skeleton"
+            app:layout_constraintVertical_bias="0.888" />
+
+
+        <io.rmiri.skeleton.SkeletonView
+            android:id="@+id/home_temp_mod_skeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            Skeleton:SK_textLineNumber="1"
+            Skeleton:SK_shapeType="rect"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_temp_div_skeleton"
+            app:layout_constraintEnd_toStartOf="@+id/text_percent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/point"
+            app:layout_constraintTop_toTopOf="@+id/home_temp_div_skeleton"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/home_temp_mod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textColor="@color/text_main"
+                android:textSize="55sp"
+                />
+
+        </io.rmiri.skeleton.SkeletonView>
+
+
+        <TextView
+            android:id="@+id/text_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="35dp"
+            android:text="°"
+            android:textColor="@color/text_secondary"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="@+id/smile_skeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/smile_skeleton"
+            app:layout_constraintTop_toTopOf="@+id/smile_skeleton"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/text_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/HumidityView"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/smile_skeleton"
+            app:layout_constraintStart_toStartOf="@+id/smile_skeleton"
+            app:layout_constraintTop_toBottomOf="@+id/smile_skeleton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/text_co2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="25dp"
+            android:text="@string/CO2View"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_humidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_humidity"
+            app:layout_constraintTop_toTopOf="@+id/text_humidity"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <io.rmiri.skeleton.SkeletonView
+            android:id="@+id/home_humidity_skeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            Skeleton:SK_textLineNumber="1"
+            Skeleton:SK_shapeType="rect"
+            app:layout_constraintBottom_toTopOf="@+id/text_humidity"
+            app:layout_constraintEnd_toEndOf="@+id/text_humidity"
+            app:layout_constraintHorizontal_bias="0.425"
+            app:layout_constraintStart_toStartOf="@+id/text_humidity"
+            app:layout_constraintTop_toBottomOf="@+id/text_humidity"
+            app:layout_constraintVertical_bias="0.0"
+            SK_textLineLastWidth="full">
+
+            <TextView
+                android:id="@+id/home_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                android:textColor="@color/text_main"
+                android:textSize="40sp"
+                />
+        </io.rmiri.skeleton.SkeletonView>
+
+
+
+        <TextView
+            android:id="@+id/text_percent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="%"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_humidity_skeleton"
+            app:layout_constraintEnd_toEndOf="@+id/text_humidity"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/home_humidity_skeleton"
+            app:layout_constraintTop_toTopOf="@+id/home_humidity_skeleton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <io.rmiri.skeleton.SkeletonView
+            android:id="@+id/home_co2_skeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            Skeleton:SK_textLineNumber="1"
+            Skeleton:SK_shapeType="rect"
+            app:layout_constraintBottom_toTopOf="@+id/text_co2"
+            app:layout_constraintEnd_toEndOf="@+id/text_co2"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="@+id/text_co2"
+            app:layout_constraintTop_toBottomOf="@+id/text_co2"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/home_co2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-----"
+                android:textColor="@color/text_main"
+                android:textSize="40sp"
+                />
+        </io.rmiri.skeleton.SkeletonView>
+
+
+        <TextView
+            android:id="@+id/text_ppm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ppm"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_co2_skeleton"
+            app:layout_constraintEnd_toEndOf="@+id/text_co2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/home_co2_skeleton"
+            app:layout_constraintTop_toTopOf="@+id/home_co2_skeleton"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

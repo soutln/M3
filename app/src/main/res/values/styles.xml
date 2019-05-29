@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="ThemeMainM3" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+
+
+</resources>

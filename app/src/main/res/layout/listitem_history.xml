@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listitem_history_layout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginVertical="5dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/listitem_history_backgroung"
+    xmlns:Skeleton="http://schemas.android.com/apk/res-auto"
+    android:elevation="10dp">
+
+    <io.rmiri.skeleton.SkeletonView
+        android:id="@+id/day_name_skeleton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        Skeleton:SK_textLineNumber="1"
+        Skeleton:SK_shapeType="text"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/day_weather_skeleton"
+        app:layout_constraintEnd_toStartOf="@+id/day_weather_skeleton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/day_weather_skeleton"
+        app:layout_constraintVertical_bias="0.041">
+        <TextView
+            android:id="@+id/day_name"
+            android:layout_width="156dp"
+            android:layout_height="36dp"
+            android:gravity="center_vertical"
+            android:text="День недели"
+            android:textColor="@color/dark"
+            android:textSize="25sp"
+           />
+    </io.rmiri.skeleton.SkeletonView>
+
+
+    <io.rmiri.skeleton.SkeletonView
+        android:id="@+id/day_weather_skeleton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        Skeleton:SK_cornerRadius="0dp"
+        Skeleton:SK_padding="0dp"
+        Skeleton:SK_shapeType="oval"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" >
+
+        <ImageView
+            android:id="@+id/day_weather"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_sun_color"
+            />
+    </io.rmiri.skeleton.SkeletonView>
+
+
+    <io.rmiri.skeleton.SkeletonView
+        android:id="@+id/day_out_temp_skeleton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/day_weather_skeleton"
+        app:layout_constraintStart_toEndOf="@+id/day_weather_skeleton"
+        app:layout_constraintTop_toTopOf="@+id/day_weather_skeleton"
+        app:layout_constraintVertical_bias="0.515">
+        <TextView
+            android:id="@+id/day_out_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="24"
+            android:textColor="@color/dark"
+            android:textSize="20dp"
+            />
+    </io.rmiri.skeleton.SkeletonView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°"
+        android:textColor="@color/primary_dark"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/day_out_temp_skeleton"
+        app:layout_constraintStart_toEndOf="@+id/day_out_temp_skeleton"
+        app:layout_constraintTop_toTopOf="@+id/day_out_temp_skeleton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <io.rmiri.skeleton.SkeletonView
+        android:id="@+id/calendar_date_skeleton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/day_weather_skeleton"
+        app:layout_constraintEnd_toEndOf="@+id/day_name_skeleton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/day_name_skeleton"
+        app:layout_constraintTop_toBottomOf="@+id/day_name_skeleton"
+        app:layout_constraintVertical_bias="0.0" >
+        <TextView
+            android:id="@+id/calendar_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="число"
+            android:textColor="@color/text_history"
+            />
+    </io.rmiri.skeleton.SkeletonView>
+
+</android.support.constraint.ConstraintLayout>

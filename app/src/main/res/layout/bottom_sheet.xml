@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+
+    android:orientation="vertical"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    android:background="@drawable/bottom_sheet_design"
+    android:elevation="30sp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/account_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="Имя Фамилия"
+            android:textColor="@color/dark"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/account_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toEndOf="@+id/account_image"
+            app:layout_constraintTop_toTopOf="@+id/account_image" />
+
+        <Switch
+            android:id="@+id/switch_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/log"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.916"
+            app:layout_constraintStart_toEndOf="@+id/log"
+            app:layout_constraintTop_toTopOf="@+id/log"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:text="Логировать действия"
+            android:textColor="@color/dark"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/account_image"
+            app:layout_constraintTop_toBottomOf="@+id/account_image" />
+
+
+    </android.support.constraint.ConstraintLayout>
+

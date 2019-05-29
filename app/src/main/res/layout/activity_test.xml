@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:Skeleton="http://schemas.android.com/apk/res-auto"
+    tools:context=".TestActivity"
+    android:id="@+id/testView">
+
+<io.rmiri.skeleton.SkeletonView
+        android:id="@+id/skeletonView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        Skeleton:SK_cornerRadius="0dp"
+        Skeleton:SK_padding="0dp"
+        Skeleton:SK_shapeType="text"
+        Skeleton:SK_textLineNumber="1"
+        Skeleton:layout_constraintBottom_toBottomOf="parent"
+        Skeleton:layout_constraintEnd_toEndOf="parent"
+        Skeleton:layout_constraintStart_toStartOf="parent"
+        Skeleton:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/WindView"
+            android:id="@+id/textView"
+            android:textColor="@color/dark"
+            android:textSize="50sp" />
+
+    </io.rmiri.skeleton.SkeletonView>
+
+
+
+</android.support.constraint.ConstraintLayout>

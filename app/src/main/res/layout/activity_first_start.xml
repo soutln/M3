@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstStart.FirstStartActivity"
+    android:id="@+id/constLay">
+
+
+
+<android.support.v4.view.ViewPager
+    android:id="@+id/pager_fs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</android.support.v4.view.ViewPager>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pager_fs"
+        app:layout_constraintEnd_toStartOf="@+id/first_start_btn2"
+        app:layout_constraintStart_toEndOf="@+id/first_start_btn1"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp">
+
+    </android.support.design.widget.TabLayout>
+
+    <Button
+        android:id="@+id/first_start_btn1"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/text_main"/>
+
+
+    <Button
+        android:id="@+id/first_start_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/Button_Next"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/text_main"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

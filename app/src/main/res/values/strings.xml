@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">M3</string>
+
+
+    <string name="LoginButton">Вход</string>
+    <string name="EditLogin">Логин</string>
+    <string name="EditPass">Пароль</string>
+
+    <string name="Button_Next">Вперед</string>
+    <string name="Button_Back">Назад</string>
+    <string name="Button_GO">Поехали</string>
+
+    <string name="HumidityView">ВЛАЖНОСТЬ</string>
+    <string name="CO2View">CO2</string>
+    <string name="PressureView">ДАВЛЕНИЕ</string>
+    <string name="HomeView">Помещение</string>
+    <string name="OutView">Улица</string>
+    <string name="WindView">Ветер</string>
+
+
+    <string name="LoginText">Для продолжения нажмите...</string>
+
+    <string name="fragment_first_start_one">Все данные о погоде в вашем телефоне</string>
+    <string name="fragment_first_start_second">Микроклимат дома</string>
+    <string name="fragment_first_start_third">Скорость и направление ветра</string>
+    <string name="fragment_first_start_fourth">Уровень СО2</string>
+    <string name="fragment_first_start_fifth">Доступ к данным из любой точки мира</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
