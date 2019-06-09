@@ -23,20 +23,6 @@
     <color name="dark">#000000</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="q">#E1F5FE</color>
-    <color name="w">#B3E5FC</color>
-    <color name="e">#81D4FA</color>
-    <color name="r">#4FC3F7</color>
-    <color name="п">#29B6F6</color>
-    <color name="y">#03A9F4</color>
-    <color name="u">#039BE5</color>
-    <color name="g">#0288D1</color>
-    <color name="i">#0277BD</color>
-    <color name="o">#01579B</color>
-    <color name="p">#80D8FF</color>
-    <color name="a">#40C4FF</color>
-    <color name="s">#00B0FF</color>
-    <color name="n">#0091EA</color>
 
 
     <color name="btnPressed">#CCCCCC</color>

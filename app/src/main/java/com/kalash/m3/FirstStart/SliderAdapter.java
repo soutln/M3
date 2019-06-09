@@ -23,7 +23,7 @@ public class SliderAdapter extends PagerAdapter {
 
     public static int[] slide_image_res = {
             R.drawable.ic_app,
-            R.drawable.ic_icon_co2,
+            R.drawable.ic_hous,
             R.drawable.ic_wind_first_start,
             R.drawable.ic_icon_co2,
             R.drawable.ic_overcast

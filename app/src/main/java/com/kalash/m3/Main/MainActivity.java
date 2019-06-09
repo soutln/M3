@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements
     ConstraintLayout yes_internet;
     ConstraintLayout no_internet;
     Button no_internet_btn;
+    TextView no_history;
     CheckInternet checkInternet = new CheckInternet();
 
 
@@ -132,6 +133,8 @@ public class MainActivity extends AppCompatActivity implements
         yes_internet = findViewById(R.id.yesinternet);
         no_internet = findViewById(R.id.nointernet);
         no_internet_btn = findViewById(R.id.nointernet_btn);
+        no_history = findViewById(R.id.nohistory);
+        no_history.setVisibility(View.GONE);
 
         HomeFragment = new HomeFragment();
         OutFragment = new OutSideFragment();
@@ -193,8 +196,13 @@ public class MainActivity extends AppCompatActivity implements
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if(currentUser != null){
-            Glide.with(this).load(currentUser.getPhotoUrl()).into(user_img);
-            user_name.setText("Егор Калашников");
+            if(currentUser.getPhotoUrl() != null){
+                Glide.with(this).load(currentUser.getPhotoUrl()).into(user_img);
+            }
+            if(currentUser.getDisplayName() != null){
+                user_name.setText(currentUser.getDisplayName());
+            }
+
         }
 
         if(getLog_on()){
@@ -349,6 +357,7 @@ public class MainActivity extends AppCompatActivity implements
             progressBar.setVisibility(View.VISIBLE);
             historyView.setVisibility(View.GONE);
             hourView.setVisibility(View.GONE);
+            no_history.setVisibility(View.GONE);
         }
 
     }
@@ -375,6 +384,9 @@ public class MainActivity extends AppCompatActivity implements
                     new RecycleViewHourAdapter(this,this, data, keyValue);
             hourView.setAdapter(adapter);
             hourView.setLayoutManager(new LinearLayoutManager(this));
+        }
+        else {
+            updateAdapter(name);
         }
 
     }
@@ -408,12 +420,19 @@ public class MainActivity extends AppCompatActivity implements
         if(adapterName.equals(keyValue.getHistoryAdapter())){
             onlineAdapter = keyValue.getHistoryAdapter();
             historyView.setVisibility(View.VISIBLE);
+            no_history.setVisibility(View.GONE);
             hourView.setVisibility(View.GONE);
         }
         else if(adapterName.equals(keyValue.getHourAdapter())){
             onlineAdapter = keyValue.getHourAdapter();
             historyView.setVisibility(View.GONE);
+            no_history.setVisibility(View.GONE);
             hourView.setVisibility(View.VISIBLE);
+        }
+        else{
+            historyView.setVisibility(View.GONE);
+            hourView.setVisibility(View.GONE);
+            no_history.setVisibility(View.VISIBLE);
         }
     }
     //конец работы с RecycleView

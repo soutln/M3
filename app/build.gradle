@@ -48,6 +48,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:17.0.0'
 
     implementation 'com.github.rasoulmiri:Skeleton:v1.1.4'
+    implementation 'com.ornach.nobobutton:nobobutton:1.6'
 
 
 

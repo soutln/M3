@@ -28,7 +28,6 @@ public class SplashActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
         int fs;
         int log;
         int lU;
@@ -39,28 +38,32 @@ public class SplashActivity extends AppCompatActivity  {
             String str = "";
             while ((str = br.readLine()) != null) {
 
-                res = Integer.parseInt(str);
-                if (res != 0) {
-                    lU = res % 10;
-                    res = res / 10;
-                    log = res % 10;
-                    res = res / 10;
-                    fs = res % 10;
+                if(str != "" && str.length() == 3) {
 
 
-                    if (log == 1)
-                        log_on = true;
-                    else
-                        log_on = false;
-                    if (fs == 1)
-                        first_start = true;
-                    else
-                        first_start = false;
+                    res = Integer.parseInt(str);
+                    if (res != 0) {
+                        lU = res % 10;
+                        res = res / 10;
+                        log = res % 10;
+                        res = res / 10;
+                        fs = res % 10;
 
-                    if (lU == 1)
-                        loginUser = true;
-                    else
-                        loginUser = false;
+
+                        if (log == 1)
+                            log_on = true;
+                        else
+                            log_on = false;
+                        if (fs == 1)
+                            first_start = true;
+                        else
+                            first_start = false;
+
+                        if (lU == 1)
+                            loginUser = true;
+                        else
+                            loginUser = false;
+                    }
                 }
             }
             new Log_m3("Данные восстановлены").show("d");
@@ -72,12 +75,8 @@ public class SplashActivity extends AppCompatActivity  {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
-
-
     }
+
 
     //Место для Getter and Setter
     public static boolean getLog_on() {
@@ -93,7 +92,7 @@ public class SplashActivity extends AppCompatActivity  {
     }
 
     public static void setFirst_start(boolean first_start) {
-        SplashActivity.first_start = first_start;
+       SplashActivity.first_start = first_start;
     }
 
     public static boolean getLoginUser() {
@@ -101,7 +100,7 @@ public class SplashActivity extends AppCompatActivity  {
     }
 
     public static void setLoginUser(boolean loginUser) {
-        SplashActivity.loginUser = loginUser;
+       SplashActivity.loginUser = loginUser;
     }
     //Конец для Getter and Setter
 
@@ -113,7 +112,7 @@ public class SplashActivity extends AppCompatActivity  {
                     .show("d");
             startActivity(new Intent(SplashActivity.this, FirstStartActivity.class));
         }
-        else if(loginUser == false){
+        else if(!loginUser){
             Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
             startActivity(intent);
         }else{

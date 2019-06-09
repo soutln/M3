@@ -69,9 +69,6 @@ public class FirstStartActivity extends AppCompatActivity {
         pager_fs.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-
-
-                new Log_m3(" " + i + " " ).show("d");
             }
 
             @Override

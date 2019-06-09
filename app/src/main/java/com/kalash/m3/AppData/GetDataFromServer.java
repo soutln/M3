@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class GetDataFromServer{
 
-    public static String serverURL = "https://arty212.com/";
+    public static String serverURL = "https://arty212.com/m3/";
     KeyValue keyValue;
     AnalysisData analysisData;
 
@@ -93,14 +93,18 @@ public class GetDataFromServer{
 
                 try {
                     new Log_m3("getHistoryData: данные получены " + response.body().size()).show("d");
-                    ArrayList<ArrayList<String>> res = new ArrayList();
-                    for(int i = 0; i != response.body().size(); i++){
-                        Data dt = response.body().get(i);
-                        res.add(i ,analysisData.analysis(dt, activity, context));
-                    }
                     OnHistoryAvailability onHistoryAvailability = (OnHistoryAvailability) activity;
-                    onHistoryAvailability.onHistoryAvailabilityListener(keyValue.getHistoryAdapter(),res);
-
+                    if(response.body().size() != 0){
+                        ArrayList<ArrayList<String>> res = new ArrayList();
+                        for(int i = 0; i != response.body().size(); i++){
+                            Data dt = response.body().get(i);
+                            res.add(i ,analysisData.analysis(dt, activity, context));
+                        }
+                        onHistoryAvailability.onHistoryAvailabilityListener(keyValue.getHistoryAdapter(),res);
+                    }
+                    else{
+                        onHistoryAvailability.onHistoryAvailabilityListener("no", null);
+                    }
 
                 }
                 catch (NullPointerException e){

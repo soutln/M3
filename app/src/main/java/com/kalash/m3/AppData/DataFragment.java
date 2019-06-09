@@ -32,7 +32,7 @@ public class DataFragment extends Application {
         ArrayList<String> data = new ArrayList<>();
         try {
 
-            new Log_m3("onRecoveryFragment " + fragmentFile.getCanonicalPath()).show("i");
+            new Log_m3("onRecoveryFragment: " + fragmentFile.getCanonicalPath()).show("i");
 
 
                 FileReader fr = new FileReader(fragmentFile);
@@ -52,7 +52,7 @@ public class DataFragment extends Application {
             e.printStackTrace();
         }
         catch (Exception e){
-            new Log_m3("onRecoveryFragment " + e).show("e");
+            new Log_m3("onRecoveryFragment: " + e).show("e");
         }
         return null;
     }
@@ -60,7 +60,7 @@ public class DataFragment extends Application {
     public  void onSaveFragment(ArrayList<String> data) {
         try {
 
-            new Log_m3("onSaveFragment " + fragmentFile.getCanonicalPath()).show("i");
+            new Log_m3("onSaveFragment: " + fragmentFile.getCanonicalPath()).show("i");
 
             FileWriter fw = new FileWriter(fragmentFile);
             BufferedWriter writer = new BufferedWriter(fw);
@@ -75,6 +75,9 @@ public class DataFragment extends Application {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        catch (Exception e){
+            new Log_m3("onSaveFragment: " + e).show("e");
         }
     }
 

@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface DayApi {
-    @GET("/m3/get_data.php")
+    @GET("get_data.php")
     Call<List<Data>> getData(@Query("dd") String dd, @Query("mm") String mm);
 }

@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 
 public interface HistoryApi {
 
-    @GET("/m3/get_data.php")
+    @GET("get_data.php")
     Call<List<Data>> getData(@Query("dd") String dd, @Query("mm") String mm, @Query("hh") String hh);
 
 }

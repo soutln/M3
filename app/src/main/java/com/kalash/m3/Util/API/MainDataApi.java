@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface MainDataApi {
 
-    @GET("/m3/get_data.php?real=1")
+    @GET("get_data.php?real=1")
     Call<List<Data>> getData();
 }

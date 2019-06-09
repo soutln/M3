@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.kalash.m3.Main.MainActivity;
 import com.kalash.m3.R;
-import com.kalash.m3.SplashActivity;
 import com.kalash.m3.Util.Log_m3;
 
 import java.io.BufferedReader;
@@ -84,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -103,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
+                new Log_m3("ApiException: " +  e).show("d");
             }
         }
     }
@@ -117,8 +118,8 @@ public class LoginActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         setLoginUser(true);
                         saveAppSet();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         progressBar.setVisibility(View.GONE);
-                        Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
                         startActivity(intent);
                         finishAffinity();
 
@@ -146,18 +147,6 @@ public class LoginActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    private void QuestionOut() {
-
-        if (back_pressed + 2000 > System.currentTimeMillis()){
-
-            finishAffinity();
-        }else {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Нажмите еще раз для выхода", Toast.LENGTH_SHORT);
-            toast.show();
-            back_pressed = System.currentTimeMillis();
-        }
-    }
 
     @Override
     public void onStart() {
